@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build and Push to ECR
         run: |
-          docker build -t tienda-backend .
+          docker build -t tienda-backend ./backend
           docker tag tienda-backend:latest 757858572974.dkr.ecr.us-east-1.amazonaws.com/tienda-backend:latest
           docker push 757858572974.dkr.ecr.us-east-1.amazonaws.com/tienda-backend:latest
       - name: Deploy to EKS
